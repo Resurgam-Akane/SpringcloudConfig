@@ -1,0 +1,17 @@
+zuul:
+  ignored-services: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    fms-account-service:
+      path: /accounts/**
+      serviceId: fms-account-service
+      stripPrefix: false
+      sensitiveHeaders:
+
+    fms-config:
+      path: /config/**
+      serviceId: fms-config
+      stripPrefix: false
+      sensitiveHeaders:
